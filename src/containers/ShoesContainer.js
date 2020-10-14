@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Switch, Route } from "react-router-dom";
-import { getShoes, addShoe } from "../actions/shoeActions";
+import { getShoes, addShoe, deleteShoe } from "../actions/shoeActions";
 import ShoesList from "../components/shoes/ShoesList";
 import Shoe from "../components/shoes/Shoe";
 import ShoeForm from "../components/shoes/ShoeForm";
@@ -49,7 +49,8 @@ const mapStateToProps = (state) => ({ shoes: state.shoes });
 
 const mapDispatchToProps = (dispatch) => ({
   getShoes: () => dispatch(getShoes()),
-  addShoe: (shoe) => dispatch(addShoe(shoe))
+  addShoe: (shoe) => dispatch(addShoe(shoe)),
+  deleteShoe: (shoeId) => dispatch(deleteShoe(shoeId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShoesContainer);

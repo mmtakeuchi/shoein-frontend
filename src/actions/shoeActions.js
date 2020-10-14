@@ -1,4 +1,4 @@
-const shoeURL = "http://localhost:3001/shoes"
+const shoeURL = "http://localhost:3001/shoes/"
 
 export const getShoes = () => {
     return (dispatch) => {
@@ -31,6 +31,17 @@ export const addShoe = (shoe) => {
         })
         .then(resp => resp.json())
         .then(shoe => dispatch({type: 'ADD_SHOE', shoe}))
+    }
+}
+
+export const deleteShoe = (shoeId) => {
+    return (dispatch) => {
+        console.log(shoeId)
+        fetch(shoeURL + shoeId, {
+            method: 'DELETE'
+        })
+        .then(resp => resp.json())
+        .then(data => dispatch({type: 'DELETE_SHOE', shoeId}))
     }
 }
 

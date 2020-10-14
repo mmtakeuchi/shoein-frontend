@@ -3,7 +3,7 @@ import React from 'react'
 const Shoe = (props) => {
     console.log(props)
 
-    const handleClick = () => {
+    const handleClick = (id) => {
         props.history.push("/shoes")
     }
 
@@ -17,7 +17,7 @@ const Shoe = (props) => {
                 <div>{shoe.color}</div>
                 <div>{shoe.size}</div>
                 <div>{shoe.condition}</div>
-                <button onClick={() => handleClick()}>Delete Shoe</button>
+                <button onClick={() => handleClick(shoe.id)}>Delete Shoe</button>
             </div>
         )
     }
