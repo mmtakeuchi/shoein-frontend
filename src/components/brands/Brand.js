@@ -7,7 +7,7 @@ const Brand = (props) => {
 
     if (props.brands && props.brands.length >= 1) {
         const brand = props.brands.find(brand => brand.id === parseInt(props.match.params.id, 10))
-        console.log(brand)
+        // console.log(brand)
         return (
             <div>
                 <h3>{brand.name}</h3>
