@@ -8,7 +8,7 @@ const BrandsList = ({brands}) => {
     if (brands && brands.length >= 1) {
         return brands.map(brand => {
             return (
-                <div key={brand.id} id={brand.id}>
+                <div key={brand.id} id={`brand_${brand.id}`}>
                     <div><Link to={'/brands/' + brand.id}>{brand.name}</Link></div>
                     <img src={brand.image} alt={brand.name}/>
                 </div>

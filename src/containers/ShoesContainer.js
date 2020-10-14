@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import {Switch, Route} from 'react-router-dom'
 import { getShoes } from '../actions/shoeActions'
 import ShoesList from '../components/shoes/ShoesList'
-// import Shoe from '../components/shoes/Shoe'
+import Shoe from '../components/shoes/Shoe'
 
 export class ShoesContainer extends Component {
 
@@ -16,6 +16,7 @@ export class ShoesContainer extends Component {
         return (
             <div>
                 <Route exact path="/shoes" render={(props) => <ShoesList {...props} shoes={this.props.shoes.shoes}/>} />
+                <Route path="/shoes/:id" render={(props) => <Shoe {...props} shoes={this.props.shoes.shoes}/>} />
             </div>
         )
     }

@@ -9,7 +9,7 @@ const Brand = (props) => {
         const brand = props.brands.find(brand => brand.id === parseInt(props.match.params.id, 10))
         // console.log(brand)
         return (
-            <div>
+            <div id={brand.id}>
                 <h3>{brand.name}</h3>
                 <img src={brand.image} alt={brand.name}/>
             </div>
