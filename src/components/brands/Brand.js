@@ -1,4 +1,8 @@
 import React from "react";
+import ShoesContainer from '../../containers/ShoesContainer'
+import { Route } from 'react-router-dom'
+import { connect } from 'react-redux'
+
 
 const Brand = (props) => {
   // console.log(props.brands)
@@ -11,6 +15,7 @@ const Brand = (props) => {
     // console.log(brand)
     return (
       <div id={brand.id}>
+        
         <h3>{brand.name}</h3>
         <img src={brand.image} alt={brand.name} />
       </div>
@@ -20,4 +25,6 @@ const Brand = (props) => {
   return <div>Brand</div>;
 };
 
-export default Brand;
+const mapStateToProps = (state) => ({brands: state.brands})
+
+export default connect(mapStateToProps)(Brand);

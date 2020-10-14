@@ -5,6 +5,14 @@ const shoesReducer = (state = {shoes: []}, action) => {
                 ...state,
                 shoes: action.shoes
             }
+            
+        case 'ADD_SHOE':
+            // const newShoe = {id: action.post.id, title: action.post.title, content: action.post.content}
+            console.log("this is the:", action.shoe)
+            return {
+                ...state,
+                shoes: [...state, action.shoe]
+            }
 
         default: 
             return state

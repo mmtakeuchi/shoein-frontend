@@ -9,13 +9,12 @@ function App() {
   return (
     <div className="App">
         <Navbar />
-      <Switch>
-        <Route exact path="/" component={ Home } />
-        {/* <Route exact path="/brands" render={(props) => <BrandsContainer {...props} />}/> */}
-        {/* <Route exact path="/shoes" component={ ShoesContainer } /> */}
-      </Switch>
-      <BrandsContainer />
-      <ShoesContainer />
+        <Switch>
+          <Route exact path="/" component={ Home } />
+          {/* <Route exact path="/brands" render={(props) => <BrandsContainer {...props} />}/> */}
+          {/* <Route exact path="/shoes" component={ ShoesContainer } /> */}
+        </Switch>
+        <BrandsContainer />
     </div>
   );
 }

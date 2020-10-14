@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Switch, Route, Link } from "react-router-dom";
-import { getShoes } from "../actions/shoeActions";
+import { getShoes, addShoe } from "../actions/shoeActions";
 import ShoesList from "../components/shoes/ShoesList";
 import Shoe from "../components/shoes/Shoe";
 import ShoeForm from "../components/shoes/ShoeForm";
@@ -12,6 +12,7 @@ export class ShoesContainer extends Component {
   };
 
   render() {
+      
     return (
       <div>
         <Switch>
@@ -48,6 +49,7 @@ const mapStateToProps = (state) => ({ shoes: state.shoes });
 
 const mapDispatchToProps = (dispatch) => ({
   getShoes: () => dispatch(getShoes()),
+  addShoe: (shoe) => dispatch(addShoe(shoe))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShoesContainer);
