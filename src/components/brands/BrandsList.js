@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const BrandsList = ({brands}) => {
     console.log(brands)
@@ -8,7 +9,7 @@ const BrandsList = ({brands}) => {
         return brands.map(brand => {
             return (
                 <div key={brand.id} id={brand.id}>
-                    <div>{brand.name}</div>
+                    <div><Link to={'/brands/' + brand.id}>{brand.name}</Link></div>
                     <img src={brand.image} alt={brand.name}/>
                 </div>
         )})
