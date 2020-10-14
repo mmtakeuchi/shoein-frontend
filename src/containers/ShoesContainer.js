@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {Switch, Route} from 'react-router-dom'
 import { getShoes } from '../actions/shoeActions'
-// import ShoesList from '../components/shoes/ShoesList'
+import ShoesList from '../components/shoes/ShoesList'
 // import Shoe from '../components/shoes/Shoe'
 
 export class ShoesContainer extends Component {
@@ -15,7 +15,7 @@ export class ShoesContainer extends Component {
         console.log(this.props.shoes.shoes)
         return (
             <div>
-                World
+                <Route exact path="/shoes" render={(props) => <ShoesList {...props} shoes={this.props.shoes.shoes}/>} />
             </div>
         )
     }
