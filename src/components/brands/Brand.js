@@ -1,8 +1,5 @@
 import React from "react";
-import ShoesContainer from '../../containers/ShoesContainer'
-import { Route } from 'react-router-dom'
-import { connect } from 'react-redux'
-
+// import ShoesContainer from '../../containers/ShoesContainer'
 
 const Brand = (props) => {
   // console.log(props.brands)
@@ -25,6 +22,4 @@ const Brand = (props) => {
   return <div>Brand</div>;
 };
 
-const mapStateToProps = (state) => ({brands: state.brands})
-
-export default connect(mapStateToProps)(Brand);
+export default Brand;

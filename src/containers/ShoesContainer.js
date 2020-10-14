@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import { getShoes, addShoe } from "../actions/shoeActions";
 import ShoesList from "../components/shoes/ShoesList";
 import Shoe from "../components/shoes/Shoe";
@@ -20,7 +20,7 @@ export class ShoesContainer extends Component {
             exact
             path="/shoes/new"
             render={(props) => (
-              <ShoeForm {...props} addShoe={this.props.addShoe} />
+              <ShoeForm {...props} addShoe={this.props.addShoe} brands={this.props.brands}/>
             )}
           />
           <Route
