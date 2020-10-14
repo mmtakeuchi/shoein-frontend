@@ -36,9 +36,9 @@ export class ShoesContainer extends Component {
             )}
           />
         </Switch>
-        <button>
+        {/* <button>
           <Link to={"/shoes/new"}>Create Shoe</Link>
-        </button>
+        </button> */}
       </div>
     );
   }
