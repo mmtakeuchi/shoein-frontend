@@ -15,10 +15,10 @@ export class BrandsContainer extends Component {
         // console.log(this.props.brands.brands)
         return (
             <div>
-                <BrandsList brands={this.props.brands.brands} />
-                {/* <Switch>
-                    <Route path="/brands/:id" render={(props) => <Brand {...props} brands={this.props.brands}/>} />
-                </Switch> */}
+                
+                    <Route path="/brands/:id" render={(props) => <Brand {...props} brands={this.props.brands.brands}/>} />
+                    <Route exact path="/brands" render={(props) => <BrandsList {...props} brands={this.props.brands.brands} />} />
+                
             </div>
         )
     }

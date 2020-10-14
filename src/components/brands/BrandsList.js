@@ -2,8 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const BrandsList = ({brands}) => {
-    console.log(brands)
-    console.log(brands.map(brand => brand.name))
+    // console.log(brands)
+    // console.log(brands.map(brand => brand.name))
     
     if (brands && brands.length >= 1) {
         return brands.map(brand => {
