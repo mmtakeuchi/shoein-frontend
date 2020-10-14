@@ -9,16 +9,16 @@ export class BrandsContainer extends Component {
 
     componentDidMount = () => {
         this.props.getBrands()
-        console.log(this.props)
     }
 
     render() {
+        // console.log(this.props.brands.brands)
         return (
             <div>
-                <BrandsList brands={this.props.brands} />
-                <Switch>
+                <BrandsList brands={this.props.brands.brands} />
+                {/* <Switch>
                     <Route path="/brands/:id" render={(props) => <Brand {...props} brands={this.props.brands}/>} />
-                </Switch>
+                </Switch> */}
             </div>
         )
     }

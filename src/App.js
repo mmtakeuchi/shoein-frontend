@@ -11,9 +11,11 @@ function App() {
         <Navbar />
       <Switch>
         <Route exact path="/" component={ Home } />
-        <Route exact path="/brands" component={ BrandsContainer }/>
-        <Route exact path="/shoes" component={ ShoesContainer } />
+        {/* <Route exact path="/brands" render={(props) => <BrandsContainer {...props} />}/> */}
+        {/* <Route exact path="/shoes" component={ ShoesContainer } /> */}
       </Switch>
+      <BrandsContainer />
+      <ShoesContainer />
     </div>
   );
 }

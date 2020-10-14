@@ -3,9 +3,8 @@ const brandsReducer = (state = {brands: []}, action) => {
         case 'GET_BRANDS':
             return {
                 ...state, 
-                brands: state.brands
-            }
-            
+                brands: action.brands}
+
         default: 
             return state
     }

@@ -4,7 +4,6 @@ export const getBrands = () => {
     return (dispatch) => {
         fetch(baseURL)
         .then(resp => resp.json())
-        // .then(brands => dispatch({type: 'GET_BRANDS', brands}))
-        .then(brands => console.log(brands))
+        .then(brands => dispatch({type: 'GET_BRANDS', brands}))
     }
 }
