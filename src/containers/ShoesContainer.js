@@ -33,7 +33,7 @@ export class ShoesContainer extends Component {
           <Route
             path="/shoes/:id"
             render={(props) => (
-              <Shoe {...props} shoes={this.props.shoes.shoes} />
+              <Shoe {...props} shoes={this.props.shoes.shoes} deleteShoe={this.props.deleteShoe}/>
             )}
           />
         </Switch>

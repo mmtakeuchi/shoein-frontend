@@ -9,13 +9,18 @@ const shoesReducer = (state = {shoes: []}, action) => {
         case 'ADD_SHOE':
             // const newShoe = {id: action.post.id, title: action.post.title, content: action.post.content}
             console.log("this is the:", action.shoe)
-            // return {
-            //     ...state,
-            //     shoes: [...state, action.shoe]
-            // }
+            return {
+                ...state,
+                shoes: [...state, action.shoe]
+            }
 
         case 'DELETE_SHOE':
-            console.log("this is the", action.shoeId)
+            let filteredShoes = state.shoes.filter(shoe => shoe.id !== action.shoeId)
+            
+            return {
+                ...state,
+                shoes: [...filteredShoes]
+            }
 
         default: 
             return state

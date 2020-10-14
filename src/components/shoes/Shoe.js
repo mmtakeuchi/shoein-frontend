@@ -1,9 +1,10 @@
 import React from 'react'
 
 const Shoe = (props) => {
-    console.log(props)
+    // console.log(props)
 
     const handleClick = (id) => {
+        props.deleteShoe(id);
         props.history.push("/shoes")
     }
 

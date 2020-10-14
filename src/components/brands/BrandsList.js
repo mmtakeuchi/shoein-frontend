@@ -10,9 +10,7 @@ class BrandsList extends Component {
         return brands.map((brand) => {
           return (
             <div key={brand.id} id={`brand_${brand.id}`}>
-              <div>
-                <Link to={"/brands/" + brand.id}>{brand.name}</Link>
-              </div>
+              <Link to={"/brands/" + brand.id}>{brand.name}</Link><br/>
               <img
                 src={brand.image}
                 alt={brand.name}
@@ -26,8 +24,8 @@ class BrandsList extends Component {
     };
 
     return (
-      <div>
-        <div>{brandlist()}</div>
+      <div className="brands">
+        {brandlist()}
       </div>
     );
   }

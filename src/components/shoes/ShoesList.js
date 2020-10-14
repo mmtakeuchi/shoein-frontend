@@ -10,10 +10,8 @@ class ShoesList extends Component {
         return shoes.map((shoe) => {
           return (
             <div key={shoe.id} className={`shoe_${shoe.id}`}>
-              <div>
-                <Link to={"/shoes/" + shoe.id}>{shoe.name}</Link>
-              </div>
-              <img src={shoe.image} alt={shoe.name} height="110" width="160" />
+                <Link to={"/shoes/" + shoe.id}>{shoe.name}</Link><br/>
+                <img src={shoe.image} alt={shoe.name} height="110" width="160" />
             </div>
           );
         });
@@ -21,8 +19,8 @@ class ShoesList extends Component {
     };
 
     return (
-      <div>
-        <div>{shoelist()}</div>
+      <div className="shoes">
+        {shoelist()}
       </div>
     );
   }

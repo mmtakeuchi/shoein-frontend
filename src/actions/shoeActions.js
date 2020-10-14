@@ -36,11 +36,10 @@ export const addShoe = (shoe) => {
 
 export const deleteShoe = (shoeId) => {
     return (dispatch) => {
-        console.log(shoeId)
         fetch(shoeURL + shoeId, {
             method: 'DELETE'
         })
-        .then(resp => resp.json())
+        .then(resp => console.log(resp))
         .then(data => dispatch({type: 'DELETE_SHOE', shoeId}))
     }
 }
