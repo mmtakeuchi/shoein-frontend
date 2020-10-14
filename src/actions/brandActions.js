@@ -7,3 +7,4 @@ export const getBrands = () => {
         .then(brands => dispatch({type: 'GET_BRANDS', brands}))
     }
 }
+
