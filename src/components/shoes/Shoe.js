@@ -2,6 +2,11 @@ import React from 'react'
 
 const Shoe = (props) => {
     console.log(props)
+
+    const handleClick = () => {
+        props.history.push("/shoes")
+    }
+
     if (props.shoes && props.shoes.length >= 1) {
         const shoe = props.shoes.find(shoe => shoe.id === parseInt(props.match.params.id, 10))
         // console.log(shoe)
@@ -12,6 +17,7 @@ const Shoe = (props) => {
                 <div>{shoe.color}</div>
                 <div>{shoe.size}</div>
                 <div>{shoe.condition}</div>
+                <button onClick={() => handleClick()}>Delete Shoe</button>
             </div>
         )
     }
