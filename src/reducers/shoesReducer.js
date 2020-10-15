@@ -7,7 +7,6 @@ const shoesReducer = (state = {shoes: []}, action) => {
             }
             
         case 'ADD_SHOE':
-            console.log("new shoe:", action.shoe)
             return {
                 ...state,
                 shoes: [...state.shoes, action.shoe]

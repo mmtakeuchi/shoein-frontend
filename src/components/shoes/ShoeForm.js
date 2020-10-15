@@ -30,6 +30,8 @@ class ShoeForm extends Component {
             condition: "",
             brand_id: 1
         })
+
+        this.props.history.push("/shoes")
     }
 
     render() {

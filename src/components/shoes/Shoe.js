@@ -10,7 +10,7 @@ const Shoe = (props) => {
 
     if (props.shoes && props.shoes.length >= 1) {
         const shoe = props.shoes.find(shoe => shoe.id === parseInt(props.match.params.id, 10))
-        // console.log(shoe)
+        
         return (
             <div id={shoe.id}>
                 <h3>{shoe.name}</h3>
@@ -25,7 +25,7 @@ const Shoe = (props) => {
 
     return (
         <div>
-           Shoe 
+           No Shoe Found 
         </div>
     )
 }

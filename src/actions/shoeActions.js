@@ -11,7 +11,6 @@ export const getShoes = () => {
 
 export const addShoe = (shoe) => {
     return (dispatch) => {
-        console.log(shoe)
         const strongParams = {
             shoe: {
                name: shoe.name,
