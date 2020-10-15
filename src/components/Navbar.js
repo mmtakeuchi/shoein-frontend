@@ -1,31 +1,3 @@
-// import React from "react";
-// import AppBar from '@material-ui/core/AppBar';
-// import { NavLink } from "react-router-dom";
-
-// const Navbar = () => (
-//   <AppBar>
-//     <nav>
-//     
-//       <li>
-//         <NavLink to="/">Home</NavLink>
-//       </li>
-//       <li>
-//         <NavLink to="/brands">Brands</NavLink>
-//       </li>
-//       <li>
-//         <NavLink to="/shoes">Shoes</NavLink>
-//       </li>
-//       <li>
-//         <NavLink to="/shoes/new">Create Shoe</NavLink>
-//       </li>
-//     </ul>
-//   </nav>
-//   </AppBar>
-  
-// );
-
-// export default Navbar;
-
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -36,18 +8,23 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import { NavLink } from "react-router-dom";
+import Button from "@material-ui/core/Button";
 import Link from '@material-ui/core/Link';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    
   },
   menuButton: {
     marginRight: theme.spacing(2),
+    color: "black",
+    textDecoration: "none",
   },
   title: {
     flexGrow: 1,
     display: 'none',
+    textDecoration: "none",
     marginRight: theme.spacing(2),
     [theme.breakpoints.up('sm')]: {
       display: 'block',
@@ -56,9 +33,13 @@ const useStyles = makeStyles((theme) => ({
   search: {
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
+    variant: "outlined",
+    borderColor: 'secondary-main',
+    color: "secondary-main",
+    backgroundColor: fade(theme.palette.primary.main, 0.15),
     '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
+      borderColor: fade(theme.palette.primary.main, 0.25),
+      backgroundColor: fade(theme.palette.secondary.main, 0.25),
     },
     marginLeft: 0,
     width: '100%',
@@ -77,7 +58,11 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
   },
   inputRoot: {
-    color: 'inherit',
+    color: 'black',
+  },
+  navColor: {
+    background: 'transparent',
+    boxShadow: 'none'
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
@@ -99,7 +84,7 @@ const NavBar = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" className={classes.navColor}>
         <Toolbar>
           {/* <IconButton
             edge="start"
@@ -110,20 +95,28 @@ const NavBar = () => {
             <MenuIcon />
           </IconButton> */}
 
-        <Typography className={classes.menuButton} variant="h6" noWrap>
-          <NavLink to="/" color="inherit" >Home</NavLink>
-        </Typography>
+        
+          <Button>
+            <NavLink to="/" className={classes.menuButton}>Home</NavLink>
+          </Button>
+          
          
-        <Typography className={classes.menuButton} variant="h6" noWrap> 
-       <NavLink to="/brands" variant="body2" color="inherit">Brands</NavLink>
+        <Typography variant="h6" noWrap>
+        <Button>
+       <NavLink to="/brands" className={classes.menuButton}>Brands</NavLink>
+       </Button>
        </Typography>
        
-       <Typography className={classes.menuButton} variant="h6" noWrap>
-         <NavLink to="/shoes" color="inherit" >Shoes</NavLink>
+       <Typography  variant="h6" noWrap>
+       <Button>
+         <NavLink to="/shoes" className={classes.menuButton}>Shoes</NavLink>
+         </Button>
          </Typography>
 
-         <Typography className={classes.title} variant="h6" noWrap>
-         <NavLink to="/shoes/new" color="inherit" >Create Shoe</NavLink>
+         <Typography  className={classes.title} variant="h6" noWrap>
+         <Button>
+         <NavLink to="/shoes/new" className={classes.menuButton}>Create Shoe</NavLink>
+         </Button>
          </Typography>
          
           <div className={classes.search}>
@@ -131,7 +124,7 @@ const NavBar = () => {
               <SearchIcon />
             </div>
             <InputBase
-              placeholder="Search…"
+              placeholder="Search Shoe"
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
