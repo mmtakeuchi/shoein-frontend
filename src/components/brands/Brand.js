@@ -17,12 +17,12 @@ const Brand = (props) => {
       <div id={brand.id}>
         
         <h3>{brand.name}</h3>
-        <img src={brand.image} alt={brand.name} />
+        <img src={brand.picture} alt={brand.name} />
         {shoes.map(shoe => {
           return (
             <div key={shoe.id}>
               <Link to={"/shoes/" + shoe.id}>{shoe.name}</Link><br/>
-              <img src={shoe.image} alt={shoe.name} height="250" width="300"/>
+              <img src={shoe.picture} alt={shoe.name} height="250" width="300"/>
             </div>
           )
         })}
