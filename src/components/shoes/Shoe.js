@@ -49,7 +49,6 @@ class Shoe extends Component {
 
     handleEditClick = (shoe) => {
         console.log(shoe)
-        
     }
 
     

@@ -21,10 +21,7 @@ const shoesReducer = (state = {shoes: []}, action) => {
             }
 
         case 'EDIT_SHOE':
-            console.log(state)
-            console.log(action.shoe)
             let otherShoes = state.shoes.filter(shoe => shoe.id !== action.shoe.id)
-            console.log(otherShoes)
 
             return {
                 ...state,

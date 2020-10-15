@@ -53,11 +53,10 @@ export const editShoe = (shoeData) => {
 
 export const deleteShoe = (shoeId) => {
     return (dispatch) => {
-        fetch(`${shoeURL}/${shoeId}`, {
+        fetch(shoeURL + '/' + shoeId, {
             method: 'DELETE'
         })
-        .then(resp => resp.json())
-        .then(data => dispatch({type: 'DELETE_SHOE', shoeId}))
+        .then(resp => dispatch({type: 'DELETE_SHOE', shoeId}))
         .catch(errors => console.log(errors))
     }
 }
