@@ -34,24 +34,23 @@
 
 
 import React, { Component } from 'react'
+import EditShoe from './EditShoe'
 
 class Shoe extends Component {
-    state = {
-        editing: false
-    }
 
     handleDeleteClick = (id) => {
         this.props.deleteShoe(id);
         this.props.history.push("/shoes")
     }
 
-    handleEditClick = (id) => {
-        this.props.history.push("/shoes")
+    handleEditClick = (shoe) => {
+        console.log(shoe)
+        
     }
 
     
     render() {
-        console.log(this.state)
+        // console.log(this)
         if (this.props.shoes && this.props.shoes.length >= 1) {
             const shoe = this.props.shoes.find(shoe => shoe.id === parseInt(this.props.match.params.id, 10))
             
@@ -63,7 +62,8 @@ class Shoe extends Component {
                     <div>{shoe.size}</div>
                     <div>{shoe.condition}</div>
                     <button onClick={() => this.handleDeleteClick(shoe.id)}>Delete Shoe</button>
-                    <button onClick={() => this.handleEditClick(shoe.id)}>Edit Shoe</button>
+                    <button onClick={() => this.handleEditClick(shoe)}>Edit Shoe</button>
+                    <EditShoe shoe={shoe} brands={this.props.brands}/>
                 </div>
             )
         } else {
