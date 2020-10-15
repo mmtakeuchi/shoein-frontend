@@ -37,7 +37,6 @@ export const addShoe = (shoe) => {
 
 export const editShoe = (shoeData) => {
     return (dispatch) => {
-        console.log(shoeData)
         fetch(`${shoeURL}/${shoeData.id}`, {
             method: "PATCH",
             headers: {
