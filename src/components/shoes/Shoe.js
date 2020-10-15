@@ -14,7 +14,7 @@ const Shoe = (props) => {
         return (
             <div id={shoe.id}>
                 <h3>{shoe.name}</h3>
-                <img src={shoe.image} alt={shoe.name} height="250" width="300"/>
+                <img src={shoe.picture} alt={shoe.name} height="250" width="300"/>
                 <div>{shoe.color}</div>
                 <div>{shoe.size}</div>
                 <div>{shoe.condition}</div>

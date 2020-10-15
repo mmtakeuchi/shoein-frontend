@@ -1,12 +1,3 @@
-const initialState = {
-    brands: [],
-    shoes: [{
-       name: "",
-       image: "",
-       color: "" 
-    }]
-}
-
 const brandsReducer = (state = {brands: []}, action) => {
     switch(action.type) {
         case 'GET_BRANDS':

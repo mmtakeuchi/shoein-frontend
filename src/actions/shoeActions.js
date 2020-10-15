@@ -14,11 +14,11 @@ export const addShoe = (shoe) => {
         const strongParams = {
             shoe: {
                name: shoe.name,
-               image: shoe.image,
+               picture: shoe.picture,
                color: shoe.color,
                size: shoe.size,
                condition: shoe.condition,
-               brand_id: shoe.brand
+               brand_id: shoe.brand_id
             }
         }
         fetch(shoeURL, {
@@ -30,7 +30,7 @@ export const addShoe = (shoe) => {
             body: JSON.stringify(strongParams)
         })
         .then(resp => resp.json())
-        .then(shoe => dispatch({type: 'ADD_SHOE', shoe}))
+        .then(shoe => console.log(shoe))
     }
 }
 
@@ -39,7 +39,7 @@ export const deleteShoe = (shoeId) => {
         fetch(shoeURL + shoeId, {
             method: 'DELETE'
         })
-        .then(resp => console.log(resp))
+        .then(resp => resp.json())
         .then(data => dispatch({type: 'DELETE_SHOE', shoeId}))
     }
 }

@@ -12,7 +12,7 @@ class BrandsList extends Component {
             <div key={brand.id} id={`brand_${brand.id}`}>
               <Link to={"/brands/" + brand.id}>{brand.name}</Link><br/>
               <img
-                src={brand.image}
+                src={brand.picture}
                 alt={brand.name}
                 height="150"
                 width="200"

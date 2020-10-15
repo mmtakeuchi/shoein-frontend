@@ -11,7 +11,7 @@ class ShoesList extends Component {
           return (
             <div key={shoe.id} className={`shoe_${shoe.id}`}>
                 <Link to={"/shoes/" + shoe.id}>{shoe.name}</Link><br/>
-                <img src={shoe.image} alt={shoe.name} height="110" width="160" />
+                <img src={shoe.picture} alt={shoe.name} height="110" width="160" />
             </div>
           );
         });
