@@ -3,12 +3,12 @@ import React, { Component } from 'react'
 export class SearchBar extends Component {
 
     state = {
-        search: ""
+        query: ""
     }
 
     handleSearch = (event) => {
         this.setState({
-            search: event.target.value
+            query: event.target.value
         })
     }
 
@@ -16,16 +16,17 @@ export class SearchBar extends Component {
         event.preventDefault()
 
         this.setState({
-            search: ""
+            query: ""
         })
     }
 
     render() {
+        // console.log(this)
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="search">Search</label>
-                    <input type="text" name="search" onChange={this.handleSearch}/>
+                    <label htmlFor="query">Search  </label>
+                    <input type="text" name="query" placeholder="Search Shoe" onChange={this.handleSearch}/>
                     <input type="submit" value="Search" />
                 </form>
             </div>

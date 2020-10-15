@@ -1,33 +1,79 @@
-import React from 'react'
+// import React from 'react'
 
-const Shoe = (props) => {
-    // console.log(props)
+// const Shoe = (props) => {
+//     // console.log(props)
 
-    const handleClick = (id) => {
-        props.deleteShoe(id);
-        props.history.push("/shoes")
-    }
+//     const handleClick = (id) => {
+//         props.deleteShoe(id);
+//         props.history.push("/shoes")
+//     }
 
-    if (props.shoes && props.shoes.length >= 1) {
-        const shoe = props.shoes.find(shoe => shoe.id === parseInt(props.match.params.id, 10))
+//     if (props.shoes && props.shoes.length >= 1) {
+//         const shoe = props.shoes.find(shoe => shoe.id === parseInt(props.match.params.id, 10))
         
-        return (
-            <div id={shoe.id}>
-                <h3>{shoe.name}</h3>
-                <img src={shoe.picture} alt={shoe.name} height="250" width="300"/>
-                <div>{shoe.color}</div>
-                <div>{shoe.size}</div>
-                <div>{shoe.condition}</div>
-                <button onClick={() => handleClick(shoe.id)}>Delete Shoe</button>
-            </div>
-        )
+//         return (
+//             <div id={shoe.id}>
+//                 <h3>{shoe.name}</h3>
+//                 <img src={shoe.picture} alt={shoe.name} height="250" width="300"/>
+//                 <div>{shoe.color}</div>
+//                 <div>{shoe.size}</div>
+//                 <div>{shoe.condition}</div>
+//                 <button onClick={() => handleClick(shoe.id)}>Delete Shoe</button>
+//             </div>
+//         )
+//     }
+
+//     return (
+//         <div>
+//            No Shoe Found 
+//         </div>
+//     )
+// }
+
+// export default Shoe;
+
+
+import React, { Component } from 'react'
+
+class Shoe extends Component {
+    state = {
+        editing: false
     }
 
-    return (
-        <div>
-           No Shoe Found 
-        </div>
-    )
+    handleDeleteClick = (id) => {
+        this.props.deleteShoe(id);
+        this.props.history.push("/shoes")
+    }
+
+    handleEditClick = (id) => {
+        this.props.history.push("/shoes")
+    }
+
+    
+    render() {
+        console.log(this.state)
+        if (this.props.shoes && this.props.shoes.length >= 1) {
+            const shoe = this.props.shoes.find(shoe => shoe.id === parseInt(this.props.match.params.id, 10))
+            
+            return (
+                <div id={shoe.id}>
+                    <h3>{shoe.name}</h3>
+                    <img src={shoe.picture} alt={shoe.name} height="250" width="300"/>
+                    <div>{shoe.color}</div>
+                    <div>{shoe.size}</div>
+                    <div>{shoe.condition}</div>
+                    <button onClick={() => this.handleDeleteClick(shoe.id)}>Delete Shoe</button>
+                    <button onClick={() => this.handleEditClick(shoe.id)}>Edit Shoe</button>
+                </div>
+            )
+        } else {
+            return (
+                <div>
+                    No Shoe Found
+                </div>
+            )
+        }
+    }
 }
 
-export default Shoe;
+export default Shoe
