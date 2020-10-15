@@ -38,6 +38,10 @@ import EditShoe from './EditShoe'
 
 class Shoe extends Component {
 
+    // componentDidMount = () => {
+
+    // }
+
     handleDeleteClick = (id) => {
         this.props.deleteShoe(id);
         this.props.history.push("/shoes")

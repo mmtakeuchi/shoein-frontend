@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { editShoe } from '../../actions/shoeActions'
 
 class EditShoe extends Component {
     state = {
@@ -18,22 +20,22 @@ class EditShoe extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
+        
+        let shoe = {...this.state, id: this.props.shoe.id}
+        this.props.editShoe(shoe)
 
-        this.props.addShoe(this.state)
-
-        this.setState({
-            name: "",
-            picture: "",
-            color: "",
-            size: "",
-            condition: "",
-            brand_id: 1
-        })
-
-        this.props.history.push("/shoes")
+        // this.setState({
+        //     name: "",
+        //     picture: "",
+        //     color: "",
+        //     size: "",
+        //     condition: "",
+        //     brand_id: 1
+        // })
     }
 
     render() {
+        // console.log(this)
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
@@ -66,4 +68,4 @@ class EditShoe extends Component {
     }
 }
 
-export default EditShoe
+export default connect(null, {editShoe})(EditShoe)

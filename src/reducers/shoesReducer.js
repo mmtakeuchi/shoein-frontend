@@ -20,6 +20,10 @@ const shoesReducer = (state = {shoes: []}, action) => {
                 shoes: [...filteredShoes]
             }
 
+        case 'EDIT_SHOE':
+            console.log(action.shoe)
+            return {shoes: [action.shoe]}
+
         default: 
             return state
     }

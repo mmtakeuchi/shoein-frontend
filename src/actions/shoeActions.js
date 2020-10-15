@@ -35,6 +35,23 @@ export const addShoe = (shoe) => {
     }
 }
 
+export const editShoe = (shoeData) => {
+    return (dispatch) => {
+        console.log(shoeData)
+        fetch(`${shoeURL}/${shoeData.id}`, {
+            method: "PATCH",
+            headers: {
+                "Accepts": "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(shoeData)
+        })
+        .then(resp => resp.json())
+        .then(shoe => dispatch({type: "EDIT_SHOE", shoe}))
+        .catch(errors => console.log(errors))
+    }
+}
+
 export const deleteShoe = (shoeId) => {
     return (dispatch) => {
         fetch(`${shoeURL}/${shoeId}`, {
