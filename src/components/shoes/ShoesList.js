@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Grid from '@material-ui/core/Grid'
-import Box from '@material-ui/core/Box';
+import {Container, Row, Col, Card, CardColumns, CardGroup} from 'react-bootstrap'
 
 class ShoesList extends Component {
   render() {
@@ -11,13 +10,17 @@ class ShoesList extends Component {
       if (shoes && shoes.length >= 1) {
         return shoes.map((shoe) => {
           return (
-            <div key={shoe.id} className={`shoe_${shoe.id}`}>
-              <Box style={{margin: 15, textAlign: 'center'}}>
-                <Link to={"/shoes/" + shoe.id}>
-                  <img src={shoe.picture} alt={shoe.name} height="150" width="200" />
-                </Link>
-                <Link to={"/shoes/" + shoe.id} style={{textDecoration: 'none', color: 'black'}}><h4>{shoe.name}</h4></Link><br/>
-              </Box>
+            <div key={shoe.id} className={`shoe_${shoe.id}`} className="col-md-3">
+              <CardGroup >
+                  <Card>
+                    <Link to={"/shoes/" + shoe.id} >
+                      <Card.Img src={shoe.picture} alt={shoe.name} width="100" height="150"/>
+                    </Link>
+                    <Card.Body>
+                      <Card.Title><Link to={"/shoes/" + shoe.id} style={{textDecoration: 'none', color: 'black', textAlign:'center'}}><h4>{shoe.name}</h4></Link><br/></Card.Title>
+                    </Card.Body>
+                  </Card> 
+              </CardGroup>
             </div>
           );
         });
@@ -26,9 +29,13 @@ class ShoesList extends Component {
 
     return (
       <div className="shoes">
-        <Grid container style={{alignSelf: "center"}}>
-          {shoelist()}
-        </Grid>
+        <React.Fragment>
+          <Container>
+            <Row >
+            {shoelist()}
+            </Row>
+          </Container>
+        </React.Fragment>
       </div>
     );
   }

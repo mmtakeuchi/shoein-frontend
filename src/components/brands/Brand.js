@@ -42,8 +42,7 @@ const Brand = (props) => {
                           <Card.Title><Link to={"/shoes/" + shoe.id} style={{textDecoration: 'none', color: 'black', textAlign:'center'}}><h4>{shoe.name}</h4></Link><br/></Card.Title>
                         </Card.Body>
                       </Card>
-                    
-                  </CardGroup>
+                    </CardGroup>
                     
                   </div>
                 )

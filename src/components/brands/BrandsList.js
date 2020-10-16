@@ -22,7 +22,6 @@ class BrandsList extends Component {
                       <Card.Title><Link to={"/brands/" + brand.id} style={{textDecoration: 'none', color: 'black', textAlign:'center'}}><h4>{brand.name}</h4></Link><br/></Card.Title>
                     </Card.Body>
                   </Card>
-                
               </CardGroup>
               
             </div>
