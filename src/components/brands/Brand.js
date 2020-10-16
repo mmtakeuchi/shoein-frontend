@@ -34,7 +34,7 @@ const Brand = (props) => {
                   <div key={shoe.id} className="col-md-3">
 
                     <CardGroup >
-                      <Card style={{display: 'flex', }}>
+                      <Card border="secondary" style={{display: 'flex'}}>
                         <Link to={"/shoes/" + shoe.id} >
                           <Card.Img src={shoe.picture} alt={shoe.name} />
                         </Link>

@@ -15,7 +15,7 @@ class BrandsList extends Component {
               
               <Link to={"/brands/" + brand.id} >
               <CardGroup >
-                  <Card >
+                  <Card border="secondary">
                     <Card.Img src={brand.picture} alt={brand.name} style={{alignItems:'center', height: '150px'}}/>
                     <Card.Body>
                       <Card.Title><h4 style={{textDecoration: 'none', color: 'black', textAlign:'center'}}>{brand.name}</h4></Card.Title>

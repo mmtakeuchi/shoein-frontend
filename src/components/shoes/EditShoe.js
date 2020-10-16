@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { editShoe } from '../../actions/shoeActions'
+import {Container, Form, Button} from 'react-bootstrap'
 
 class EditShoe extends Component {
     state = {
@@ -38,31 +39,47 @@ class EditShoe extends Component {
         // console.log(this)
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="name">Name:   </label>
-                    <input type="text" name="name" value={this.state.name} onChange={this.handleChange} /><br/>
+                <Form onSubmit={this.handleSubmit} >
+                    
+                    <Form.Group>
+                        <Form.Label>Name</Form.Label>
+                        <Form.Control type="text" placeholder="Shoe Name" name="name" value={this.state.name} onChange={this.handleChange}/> 
+                    </Form.Group>
 
-                    <label htmlFor="picture">Picture:</label>
-                    <input type="string" name="picture" value={this.state.picture} onChange={this.handleChange} /><br/>
+                    <Form.Group>
+                        <Form.Label>Image</Form.Label>
+                        <Form.Control type="string" placeholder="Image" name="picture" value={this.state.picture} onChange={this.handleChange}/> 
+                    </Form.Group>
 
-                    <label htmlFor="color">Color:</label>
-                    <input type="text" name="color" value={this.state.color} onChange={this.handleChange} /><br/>
+                    <Form.Group>
+                        <Form.Label>Color</Form.Label>
+                        <Form.Control type="text" placeholder="Shoe Color" name="color" value={this.state.color} onChange={this.handleChange}/> 
+                    </Form.Group>
 
-                    <label htmlFor="size">Size:</label>
-                    <input type="number" name="size" value={this.state.size} onChange={this.handleChange} /><br/>
+                    <Form.Group>
+                        <Form.Label>Size</Form.Label>
+                        <Form.Control type="number" placeholder="Shoe Size" name="size" value={this.state.size} onChange={this.handleChange}/> 
+                    </Form.Group>
 
-                    <label htmlFor="condition">Condition:</label>
-                    <input type="text" name="condition" value={this.state.condition} onChange={this.handleChange} /><br/>
+                    <Form.Group>
+                        <Form.Label>Condition</Form.Label>
+                        <Form.Control type="text" placeholder="Shoe Condition" name="condition" value={this.state.condition} onChange={this.handleChange}/> 
+                    </Form.Group>
 
-                    <label htmlFor="brand_id">Brand: </label>
-                    <select name="brand_id" value={this.state.brand_id} onChange={this.handleChange}>
-                        {this.props.brands.map(brand => (
-                            <option key={brand.id} value={brand.id}>{brand.name}</option>
-                        ))}
-                    </select><br/>
+                    <Form.Group controlId="exampleForm.ControlSelect1">
+                        <Form.Label>Brand</Form.Label>
+                        <Form.Control as="select" name="brand_id" value={this.state.brand_id} onChange={this.handleChange}>
+                            {this.props.brands.map(brand => (
+                                <option key={brand.id} value={brand.id}>{brand.name}</option>
+                            ))}
+                        </Form.Control>
+                    </Form.Group>
 
-                    <input type="submit" value="Create Shoe" />
-                </form>
+                    <Button variant="primary" type="submit">
+                        Add Shoe
+                    </Button>
+    
+                </Form>
             </div>
         );
     }

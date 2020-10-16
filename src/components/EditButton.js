@@ -4,7 +4,6 @@ import EditShoe from './shoes/EditShoe'
 
 const EditButton = (props) => {
     const [open, setOpen] = useState(false);
-    console.log(props)
     return (
       <>
         <Button
@@ -12,7 +11,7 @@ const EditButton = (props) => {
           aria-controls="example-collapse-text"
           aria-expanded={open}
         >
-          click
+          Edit Shoe
         </Button>
         <Collapse in={open}>
           <div id="example-collapse-text">
