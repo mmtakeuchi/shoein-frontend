@@ -5,13 +5,15 @@ import Navbar from './components/Navbar'
 import Home from './components/Home'
 import BrandsContainer from './containers/BrandsContainer'
 // import Grid from '@material-ui/core/Grid';
-import Container from '@material-ui/core/Container';
+import Container from 'react-bootstrap/Container'
+
+
 
 
 function App() {
   return (
     <div className="App">
-      {/* <Container> */}
+      <Container>
           <Navbar />
           {/* <SearchBar /> */}
           
@@ -21,7 +23,7 @@ function App() {
             {/* <Route exact path="/shoes" component={ ShoesContainer } /> */}
           </Switch>
           <BrandsContainer />
-        {/* </Container> */}
+        </Container>
     </div>
   );
 }
