@@ -35,10 +35,11 @@ const useStyles = makeStyles((theme) => ({
     variant: "outlined",
     borderColor: 'secondary-main',
     color: "secondary-main",
-    backgroundColor: fade(theme.palette.primary.main, 0.15),
+    borderStyle: 'solid',
+    backgroundColor: fade(theme.palette.background.paper, 0.15),
     '&:hover': {
-      borderColor: fade(theme.palette.primary.main, 0.25),
-      backgroundColor: fade(theme.palette.secondary.main, 0.25),
+      borderColor: fade(theme.palette.info.dark, 0.25),
+      backgroundColor: fade(theme.palette.background.paper, 0.25),
     },
     marginLeft: 0,
     width: '100%',
@@ -55,12 +56,13 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    color: 'grey'
   },
   inputRoot: {
     color: 'black',
   },
   navColor: {
-    background: 'transparent',
+    background: 'white',
     boxShadow: 'none'
   },
   inputInput: {
@@ -123,7 +125,7 @@ const NavBar = () => {
               <SearchIcon />
             </div>
             <InputBase
-              placeholder="Search Shoe"
+              placeholder="Search"
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
