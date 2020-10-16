@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import {Grid, Box, Card, CardMedia, CardContent} from '@material-ui/core';
-
+import {Container, Row, Col, Card, CardColumns, CardGroup} from 'react-bootstrap'
 
 class BrandsList extends Component {
   render() {
@@ -11,31 +10,22 @@ class BrandsList extends Component {
     const brandlist = () => {
       if (brands && brands.length >= 1) {
         return brands.map((brand) => {
-          
           return (
-            
-            <div key={brand.id} id={`brand_${brand.id}`}>
-              {/* <Box style={{margin: 15, textAlign: 'center'}}> */}
-                <Card style={{maxWidth: 300, margin: 'auto'}}>
-                  {/* <CardMedia 
-                  image={
-            "https://image.freepik.com/free-photo/river-foggy-mountains-landscape_1204-511.jpg"
-          }
-                  // src={brand.picture}
-                  alt={brand.name}
-                 /> */}
-                 <CardMedia
-          image={
-            "https://image.freepik.com/free-photo/river-foggy-mountains-landscape_1204-511.jpg"
-          }
-        />
-                 <CardContent>
-                  <Link to={"/brands/" + brand.id} style={{textDecoration: 'none', color: 'black'}}><h4>{brand.name}</h4></Link><br/>
-                  </CardContent>
-                </Card>
-              {/* </Box> */}
+            <div key={brand.id} id={`brand_${brand.id}`} className="col-md-4">
+              
+              <CardGroup >
+                  <Card>
+                    <Link to={"/brands/" + brand.id} >
+                      <Card.Img src={brand.picture} alt={brand.name} width="100" height="150"/>
+                    </Link>
+                    <Card.Body>
+                      <Card.Title><Link to={"/brands/" + brand.id} style={{textDecoration: 'none', color: 'black', textAlign:'center'}}><h4>{brand.name}</h4></Link><br/></Card.Title>
+                    </Card.Body>
+                  </Card>
+                
+              </CardGroup>
+              
             </div>
-           
           );
         });
       }
@@ -43,9 +33,13 @@ class BrandsList extends Component {
 
     return (
       <div className="brands">
-        <Grid >
-          {brandlist()}
-        </Grid>
+        <React.Fragment>
+          <Container>
+            <Row >
+              {brandlist()}
+            </Row>
+          </Container>
+        </React.Fragment>
       </div>
     );
   }
