@@ -18,13 +18,13 @@ export class BrandsContainer extends Component {
     render() {
         // console.log(this.props.brands.brands)
         return (
-            <div>
+            <React.Fragment>
                 <Switch>
                     <Route path="/shoes" render={(props) => <ShoesContainer {...props} brands={this.props.brands.brands}/>} />
                     <Route path="/brands/:id" render={(props) => <Brand {...props} brands={this.props.brands.brands} shoes={this.props.shoes.shoes}/>} />
                     <Route exact path="/brands" render={(props) => <BrandsList {...props} brands={this.props.brands.brands} />} />
                 </Switch>
-            </div>
+            </React.Fragment>
         )
     }
 }

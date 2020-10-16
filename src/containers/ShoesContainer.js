@@ -14,7 +14,7 @@ export class ShoesContainer extends Component {
   render() {
       
     return (
-      <div>
+      <React.Fragment>
         <Switch>
           <Route
             exact
@@ -40,7 +40,7 @@ export class ShoesContainer extends Component {
         {/* <button>
           <Link to={"/shoes/new"}>Create Shoe</Link>
         </button> */}
-      </div>
+      </React.Fragment>
     );
   }
 }

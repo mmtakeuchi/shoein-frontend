@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"
+import Box from '@material-ui/core/Box'
 // import ShoesContainer from '../../containers/ShoesContainer'
 
 const Brand = (props) => {
@@ -14,15 +15,18 @@ const Brand = (props) => {
     // console.log(shoes)
     // console.log(brand)
     return (
-      <div id={brand.id}>
-        
-        <h3>{brand.name}</h3>
-        <img src={brand.picture} alt={brand.name} />
+      <div id={brand.id} display="flex">
+        <Box style={{textAlign: "center", mx: "auto"}}>
+          <h3 text-align="center">{brand.name}</h3>
+          <img src={brand.picture} alt={brand.name} height="200" width="300"/>
+        </Box>
         {shoes.map(shoe => {
           return (
             <div key={shoe.id}>
-              <Link to={"/shoes/" + shoe.id}>{shoe.name}</Link><br/>
-              <img src={shoe.picture} alt={shoe.name} height="250" width="300"/>
+              <Box m={5}>
+                <h3><Link to={"/shoes/" + shoe.id} style={{ textDecoration: 'none', color: 'black', textAlign: 'center' }}>{shoe.name}</Link></h3>
+                <Link to={"/shoes/" + shoe.id}><img src={shoe.picture} alt={shoe.name} height="150" width="200"/></Link>
+              </Box>
             </div>
           )
         })}
