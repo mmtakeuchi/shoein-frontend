@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import EditShoe from './EditShoe'
 import {Grid, Box} from '@material-ui/core';
+import { Collapse, Button } from 'react-bootstrap'
+import EditButton from '../EditButton'
 
 class Shoe extends Component {
 
@@ -10,18 +11,18 @@ class Shoe extends Component {
     }
 
     handleEditClick = (shoe) => {
-        // console.log(shoe)
     }
 
+    // const [open, setOpen] = useState(false);
     
     render() {
-        // console.log(this)
+
         if (this.props.shoes && this.props.shoes.length >= 1) {
             const shoe = this.props.shoes.find(shoe => shoe.id === parseInt(this.props.match.params.id, 10))
             
             return (
                 <div id={shoe.id} style={{display: 'flex', justifyContent:'center', alignItems:'center', textAlign:'center'}}>
-                    <Grid block style={{alignSelf: "center"}}>
+                    <Grid style={{alignSelf: "center"}}>
                         <Grid item>
 
                             <h3>{shoe.name}</h3>
@@ -36,9 +37,8 @@ class Shoe extends Component {
                         </Grid>
                         <Box style={{margin: 15, textAlign: 'center'}}>
 
-                            <button onClick={() => this.handleDeleteClick(shoe.id)}>Delete Shoe</button>
-                            <button onClick={() => this.handleEditClick(shoe)}>Edit Shoe</button>
-                            <EditShoe shoe={shoe} brands={this.props.brands}/>
+                            <Button onClick={() => this.handleDeleteClick(shoe.id)}>Delete Shoe</Button>
+                            <EditButton shoe={shoe} brands={this.props.brands}/>
                         </Box>
                     </Grid>
                 </div>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import {Container, Row, Col, Card, CardColumns, CardGroup} from 'react-bootstrap'
+import {Container, Row, Card, CardGroup} from 'react-bootstrap'
 
 class BrandsList extends Component {
   render() {
@@ -13,17 +13,17 @@ class BrandsList extends Component {
           return (
             <div key={brand.id} id={`brand_${brand.id}`} className="col-md-4">
               
+              <Link to={"/brands/" + brand.id} >
               <CardGroup >
-                  <Card className="flex-fill" style={{height: '350px'}}>
-                    <Link to={"/brands/" + brand.id} >
-                      <Card.Img src={brand.picture} alt={brand.name} style={{padding:"30px", justifyContent: 'center', alignItems: 'center'}}/>
-                    </Link>
+                  <Card >
+                    <Card.Img src={brand.picture} alt={brand.name} style={{alignItems:'center', height: '150px'}}/>
                     <Card.Body>
-                      <Card.Title><Link to={"/brands/" + brand.id} style={{textDecoration: 'none', color: 'black', textAlign:'center'}}><h4>{brand.name}</h4></Link><br/></Card.Title>
+                      <Card.Title><h4 style={{textDecoration: 'none', color: 'black', textAlign:'center'}}>{brand.name}</h4></Card.Title>
                     </Card.Body>
                   </Card>
+                 
               </CardGroup>
-              
+              </Link>
             </div>
           );
         });

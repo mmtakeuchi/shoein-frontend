@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import {Container, Row, Col, Card, CardColumns, CardGroup} from 'react-bootstrap'
+import {Container, Row, Card, CardGroup} from 'react-bootstrap'
 
 class ShoesList extends Component {
   render() {
@@ -10,7 +10,7 @@ class ShoesList extends Component {
       if (shoes && shoes.length >= 1) {
         return shoes.map((shoe) => {
           return (
-            <div key={shoe.id} className={`shoe_${shoe.id}`} className="col-md-3">
+            <div key={shoe.id} className={`shoe_${shoe.id} col-md-3`}>
               <CardGroup >
                   <Card>
                     <Link to={"/shoes/" + shoe.id} >
@@ -29,13 +29,11 @@ class ShoesList extends Component {
 
     return (
       <div className="shoes">
-        <React.Fragment>
           <Container>
             <Row >
             {shoelist()}
             </Row>
           </Container>
-        </React.Fragment>
       </div>
     );
   }

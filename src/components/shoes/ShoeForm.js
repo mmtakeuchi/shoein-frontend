@@ -79,7 +79,6 @@ class ShoeForm extends Component {
 
                         <Button variant="primary" type="submit">
                             Add Shoe
-                            {/* <input type="submit" value="Create Shoe" /> */}
                         </Button>
         
                     </Form>

@@ -8,9 +8,8 @@ import BrandsContainer from './containers/BrandsContainer'
 import Container from 'react-bootstrap/Container'
 
 
-
-
 function App() {
+  
   return (
     <div className="App">
       <Container>
@@ -23,6 +22,7 @@ function App() {
             {/* <Route exact path="/shoes" component={ ShoesContainer } /> */}
           </Switch>
           <BrandsContainer />
+          
         </Container>
     </div>
   );

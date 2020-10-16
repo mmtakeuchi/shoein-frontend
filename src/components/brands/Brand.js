@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"
-import {Container, Row, Col, Card, CardColumns, CardGroup} from 'react-bootstrap'
+import {Container, Row, Col, Card, CardGroup} from 'react-bootstrap'
 
 const Brand = (props) => {
   // console.log(props.brands)
@@ -14,7 +14,7 @@ const Brand = (props) => {
     // console.log(shoes)
     // console.log(brand)
     return (
-      <div container id={brand.id} display="flex" justify-content="center">
+      <div id={brand.id} display="flex" justify-content="center">
         <Container>
           <Row className="justify-content-md-center">
             <Col md="auto"><h3 text-align="center">{brand.name}</h3></Col>
@@ -36,7 +36,7 @@ const Brand = (props) => {
                     <CardGroup >
                       <Card style={{display: 'flex', }}>
                         <Link to={"/shoes/" + shoe.id} >
-                          <Card.Img src={shoe.picture} alt={shoe.name} style={{width:"100px", height:"150px", justifyContent:"center", alignItems:'center', textAlign:'center'}}/>
+                          <Card.Img src={shoe.picture} alt={shoe.name} />
                         </Link>
                         <Card.Body>
                           <Card.Title><Link to={"/shoes/" + shoe.id} style={{textDecoration: 'none', color: 'black', textAlign:'center'}}><h4>{shoe.name}</h4></Link><br/></Card.Title>
