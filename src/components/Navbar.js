@@ -63,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
   },
   navColor: {
     background: 'white',
-    boxShadow: 'none'
+    // boxShadow: 'none'
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
@@ -98,7 +98,7 @@ const NavBar = () => {
 
         
           <Button>
-            <NavLink to="/" className={classes.menuButton}>Home</NavLink>
+            <NavLink to="/" className={classes.menuButton} style={{fontFamily: 'papyrus', color: 'red', fontWeight: 'bold', fontSize: 20}}>Shoein</NavLink>
           </Button>
           
          
