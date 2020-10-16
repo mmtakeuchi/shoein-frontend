@@ -11,7 +11,7 @@ import Container from '@material-ui/core/Container';
 function App() {
   return (
     <div className="App">
-      <Container>
+      {/* <Container> */}
           <Navbar />
           {/* <SearchBar /> */}
           
@@ -21,7 +21,7 @@ function App() {
             {/* <Route exact path="/shoes" component={ ShoesContainer } /> */}
           </Switch>
           <BrandsContainer />
-        </Container>
+        {/* </Container> */}
     </div>
   );
 }

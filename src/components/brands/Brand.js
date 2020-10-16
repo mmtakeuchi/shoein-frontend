@@ -20,6 +20,9 @@ const Brand = (props) => {
           <h3 text-align="center">{brand.name}</h3>
           <img src={brand.picture} alt={brand.name} height="200" width="300"/>
         </Box>
+
+        <div style={{margin: 40, fontWeight: 'bold', fontSize: 19}}>Results <span style={{color: '#0000CC'}}>{shoes.length}</span></div>
+
         {shoes.map(shoe => {
           return (
             <div key={shoe.id}>

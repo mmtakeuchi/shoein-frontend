@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid, Select, Input, TextField} from '@material-ui/core';
+import { Grid, Select, InputLabel, TextField, Box, FormControl, Input} from '@material-ui/core';
 
 
 class ShoeForm extends Component {
@@ -39,35 +39,50 @@ class ShoeForm extends Component {
     render() {
         // console.log(this.props.brands)
         return (
-            <React.Fragment>
-                <Grid style={{textAlign: "center"}}>
+            <div style={{ padding: 16, margin: 'auto', maxWidth: '100%' }}>
+                
                 <form onSubmit={this.handleSubmit} >
-                    <label htmlFor="name">Name:   </label>
-                    <Input type="text" name="name" value={this.state.name} onChange={this.handleChange} /><br/>
+                <Grid container spacing={2} alignItems="flex-start" >
+                    <Grid item xs={6}>
+                        <FormControl>
+                        <InputLabel htmlFor="name">Name:   </InputLabel>
+                        <Input type="text" name="name" value={this.state.name} onChange={this.handleChange} />
+                        </FormControl>
+                    </Grid>
 
-                    <label htmlFor="picture">Picture:</label>
-                    <TextField type="string" name="picture" value={this.state.picture} onChange={this.handleChange} /><br/>
+                    <Grid item xs={6}>
+                        <InputLabel htmlFor="picture">Picture:</InputLabel>
+                        <TextField type="string" name="picture" value={this.state.picture} onChange={this.handleChange} style={{width: 300}}/>
+                    </Grid>
 
-                    <label htmlFor="color">Color:</label>
-                    <TextField type="text" name="color" value={this.state.color} onChange={this.handleChange} /><br/>
+                    <Grid item xs={6}>
+                        <InputLabel htmlFor="color">Color:</InputLabel>
+                        <TextField type="text" name="color" value={this.state.color} onChange={this.handleChange} style={{width: 300}}/>
+                    </Grid>
 
-                    <label htmlFor="size">Size:</label>
-                    <TextField type="number" name="size" value={this.state.size} onChange={this.handleChange} /><br/>
+                    <Grid item xs={6}>
+                        <InputLabel htmlFor="size">Size:</InputLabel>
+                        <TextField type="number" name="size" value={this.state.size} onChange={this.handleChange} style={{width: 300}}/>
+                    </Grid>
 
-                    <label htmlFor="condition">Condition:</label>
-                    <TextField type="text" name="condition" value={this.state.condition} onChange={this.handleChange} /><br/>
+                    <Grid item xs={6}>
+                        <InputLabel htmlFor="condition">Condition:</InputLabel>
+                        <TextField type="text" name="condition" value={this.state.condition} onChange={this.handleChange} style={{width: 300}}/>
+                    </Grid>
 
-                    <label htmlFor="brand_id">Brand: </label>
-                    <Select name="brand_id" value={this.state.brand_id} onChange={this.handleChange}>
-                        {this.props.brands.map(brand => (
-                            <option key={brand.id} value={brand.id}>{brand.name}</option>
-                        ))}
-                    </Select><br/>
+                    <Grid item xs={6}>
+                        <InputLabel htmlFor="brand_id">Brand: </InputLabel>
+                        <Select name="brand_id" value={this.state.brand_id} onChange={this.handleChange} style={{width:300}}>
+                            {this.props.brands.map(brand => (
+                                <option key={brand.id} value={brand.id}>{brand.name}</option>
+                            ))}
+                        </Select><br/>
+                    </Grid>
 
                     <input type="submit" value="Create Shoe" />
-                </form>
                 </Grid>
-            </React.Fragment>
+                </form>
+            </div>
         );
     }
 }
