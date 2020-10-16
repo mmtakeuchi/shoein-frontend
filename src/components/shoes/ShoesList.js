@@ -10,14 +10,13 @@ class ShoesList extends Component {
     const shoelist = () => {
       if (shoes && shoes.length >= 1) {
         return shoes.map((shoe) => {
-          console.log(shoe)
           return (
             <div key={shoe.id} className={`shoe_${shoe.id}`}>
               <Box style={{margin: 15, textAlign: 'center'}}>
                 <Link to={"/shoes/" + shoe.id}>
-                  <img src={shoe.picture} alt={shoe.name} height="110" width="160" />
+                  <img src={shoe.picture} alt={shoe.name} height="150" width="200" />
                 </Link>
-                <Link to={"/shoes/" + shoe.id} style={{textDecoration: 'none', color: 'black'}}>{shoe.name}</Link><br/>
+                <Link to={"/shoes/" + shoe.id} style={{textDecoration: 'none', color: 'black'}}><h4>{shoe.name}</h4></Link><br/>
               </Box>
             </div>
           );

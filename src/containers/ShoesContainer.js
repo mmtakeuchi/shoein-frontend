@@ -5,6 +5,7 @@ import { getShoes, addShoe, deleteShoe } from "../actions/shoeActions";
 import ShoesList from "../components/shoes/ShoesList";
 import Shoe from "../components/shoes/Shoe";
 import ShoeForm from "../components/shoes/ShoeForm";
+import Container from '@material-ui/core/Container';
 
 export class ShoesContainer extends Component {
   componentDidMount = () => {
@@ -15,6 +16,7 @@ export class ShoesContainer extends Component {
       
     return (
       <React.Fragment>
+          <Container>
         <Switch>
           <Route
             exact
@@ -37,6 +39,7 @@ export class ShoesContainer extends Component {
             )}
           />
         </Switch>
+        </Container>
         {/* <button>
           <Link to={"/shoes/new"}>Create Shoe</Link>
         </button> */}
