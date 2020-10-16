@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Grid from '@material-ui/core/Grid';
-import Container from '@material-ui/core/Container';
-import Box from '@material-ui/core/Box'
+import Box from '@material-ui/core/Box';
 
 
 class BrandsList extends Component {
@@ -16,8 +15,8 @@ class BrandsList extends Component {
           return (
             
             <div key={brand.id} id={`brand_${brand.id}`}>
-              <Box style={{margin: 20}}>
-                <h4 text-align="center">{brand.name}</h4><br/>
+              <Box style={{margin: 15, textAlign: 'center'}}>
+                <Link to={"/brands/" + brand.id} style={{textDecoration: 'none', color: 'black'}}><h4>{brand.name}</h4></Link><br/>
                 <Link to={"/brands/" + brand.id}><img
                 src={brand.picture}
                 alt={brand.name}
@@ -35,29 +34,7 @@ class BrandsList extends Component {
     return (
       <div className="brands">
         <Grid container style={{alignSelf: "center", padding: 6}}>
-        {/* <Box
-        display="flex" 
-        width={500} height={80} 
-        bgcolor="lightblue"
-      >
-        <Box m="auto">
-          1. Box (margin: auto)
-        </Box>
-      </Box>
-      <Box 
-        display="flex" 
-        width={500} height={80} 
-        bgcolor="lightgreen"
-        alignItems="center"
-        justifyContent="center"
-      >
-        2. Box (alignItems and justifyContent)
-      </Box> */}
-       
           {brandlist()}
-        
-      
-          
         </Grid>
       </div>
     );
