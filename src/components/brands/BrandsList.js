@@ -14,9 +14,9 @@ class BrandsList extends Component {
             <div key={brand.id} id={`brand_${brand.id}`} className="col-md-4">
               
               <CardGroup >
-                  <Card>
+                  <Card className="flex-fill" style={{height: '350px'}}>
                     <Link to={"/brands/" + brand.id} >
-                      <Card.Img src={brand.picture} alt={brand.name} width="100" height="150"/>
+                      <Card.Img src={brand.picture} alt={brand.name} style={{padding:"30px", justifyContent: 'center', alignItems: 'center'}}/>
                     </Link>
                     <Card.Body>
                       <Card.Title><Link to={"/brands/" + brand.id} style={{textDecoration: 'none', color: 'black', textAlign:'center'}}><h4>{brand.name}</h4></Link><br/></Card.Title>

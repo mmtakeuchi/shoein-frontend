@@ -31,12 +31,12 @@ const Brand = (props) => {
             <Row >
               {shoes.map(shoe => {
                 return (
-                  <div key={shoe.id} className="col-md-4">
+                  <div key={shoe.id} className="col-md-3">
 
                     <CardGroup >
                       <Card style={{display: 'flex', }}>
                         <Link to={"/shoes/" + shoe.id} >
-                          <Card.Img src={shoe.picture} alt={shoe.name} width="100" height="150"/>
+                          <Card.Img src={shoe.picture} alt={shoe.name} style={{width:"100px", height:"150px", justifyContent:"center", alignItems:'center', textAlign:'center'}}/>
                         </Link>
                         <Card.Body>
                           <Card.Title><Link to={"/shoes/" + shoe.id} style={{textDecoration: 'none', color: 'black', textAlign:'center'}}><h4>{shoe.name}</h4></Link><br/></Card.Title>
