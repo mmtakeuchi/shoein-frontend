@@ -28,7 +28,7 @@ class ShoesList extends Component {
     };
 
     return (
-      <div className="shoes">
+      <div className="shoes" style={{margin:"20px"}}>
           <Container>
             <Row >
             {shoelist()}

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import {Grid, Box} from '@material-ui/core';
 import { Button, Figure } from 'react-bootstrap'
 import EditButton from '../EditButton'
 
@@ -16,8 +15,8 @@ class Shoe extends Component {
             const shoe = this.props.shoes.find(shoe => shoe.id === parseInt(this.props.match.params.id, 10))
             
             return (
-                <div id={shoe.id} style={{display: 'flex', justifyContent:'center', alignItems:'center', textAlign:'center', margin:'20px'}}>
-                    <Figure style={{alignSelf: "center"}}>
+                <div id={shoe.id} style={{display: 'flex', justifyContent: 'center', margin:'20px'}}>
+                    <Figure style={{textAlign:'center'}}>
                         <Figure.Image src={shoe.picture} alt={shoe.name} height="250" width="300"/><br/>
                         <Figure.Caption><h3>{shoe.name}</h3></Figure.Caption>
                         <Figure.Caption>

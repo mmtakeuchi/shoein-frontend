@@ -11,7 +11,7 @@ class BrandsList extends Component {
       if (brands && brands.length >= 1) {
         return brands.map((brand) => {
           return (
-            <div key={brand.id} id={`brand_${brand.id}`} className="col-md-4">
+            <div key={brand.id} id={`brand_${brand.id}`} className="col-md-4" >
               
               <Link to={"/brands/" + brand.id} >
               <CardGroup >
@@ -31,9 +31,9 @@ class BrandsList extends Component {
     };
 
     return (
-      <div className="brands">
+      <div className="brands" style={{margin:"20px"}}>
         <React.Fragment>
-          <Container>
+          <Container >
             <Row >
               {brandlist()}
             </Row>

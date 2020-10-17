@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
+import { Form } from 'react-bootstrap'
 
 export class SearchBar extends Component {
-
     state = {
         query: ""
     }
@@ -15,20 +15,19 @@ export class SearchBar extends Component {
     handleSubmit = (event) => {
         event.preventDefault()
 
+        console.log(this.state)
         this.setState({
             query: ""
         })
     }
 
     render() {
-        // console.log(this)
+        console.log(this)
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="query">Search  </label>
-                    <input type="text" name="query" placeholder="Search Shoe" onChange={this.handleSearch}/>
-                    <input type="submit" value="Search" />
-                </form>
+                <Form onSubmit={this.handleSubmit}>
+                    <Form.Control type="text" name="query" placeholder="Search Shoe" value={this.state.query} onChange={this.handleSearch}/>
+                </Form>
             </div>
         )
     }

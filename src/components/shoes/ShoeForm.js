@@ -39,9 +39,9 @@ class ShoeForm extends Component {
     render() {
         // console.log(this.props.brands)
         return (
-            <div>
+            <div style={{marginTop:"20px", border: 'solid'}}>
                 <Container>
-                    <Form onSubmit={this.handleSubmit} >
+                    <Form onSubmit={this.handleSubmit} style={{margin:"10px"}}>
                     
                         <Form.Group>
                             <Form.Label>Name</Form.Label>
