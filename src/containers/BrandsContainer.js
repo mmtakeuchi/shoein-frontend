@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 import {Switch, Route} from 'react-router-dom'
-import { getBrands } from '../actions/brandActions'
-import { getShoes } from '../actions/shoeActions'
 import BrandsList from '../components/brands/BrandsList'
 import Brand from '../components/brands/Brand'
 import ShoesContainer from './ShoesContainer'
@@ -10,13 +7,8 @@ import ShoesContainer from './ShoesContainer'
 
 export class BrandsContainer extends Component {
 
-    componentDidMount = () => {
-        this.props.getBrands()
-        this.props.getShoes()
-    }
-
     render() {
-        // console.log(this.props.brands.brands)
+        console.log(this.props)
         return (
             <React.Fragment>
                 <Switch>
@@ -29,14 +21,4 @@ export class BrandsContainer extends Component {
     }
 }
 
-const mapStateFromProps = (state) => ({ 
-    brands: state.brands,
-    shoes: state.shoes
-})
-
-const mapDispatchToProps = (dispatch) => ({
-    getBrands: () => dispatch(getBrands()),
-    getShoes: () => dispatch(getShoes())
-})
-
-export default connect(mapStateFromProps, mapDispatchToProps)(BrandsContainer)
+export default BrandsContainer
