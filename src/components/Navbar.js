@@ -31,9 +31,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const NavBar = () => {
+const NavBar = (props) => {
   const classes = useStyles();
 
+  // console.log(props)
   return (
     <div className={classes.root}>
       <AppBar position="static" className={classes.navColor}>
@@ -61,7 +62,9 @@ const NavBar = () => {
          <NavLink to="/shoes/new" className={classes.menuButton}>Create Shoe</NavLink>
          </Button>
          </Typography>
-         <SearchBar/>
+
+         <SearchBar brands={props.brands} shoes={props.shoes}/>
+
         </Toolbar>
       </AppBar>
     </div>

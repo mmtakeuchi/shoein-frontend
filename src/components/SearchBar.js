@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Form } from 'react-bootstrap'
 import { connect } from 'react-redux'
+import { findShoe } from '../actions/shoeActions'
 
 export class SearchBar extends Component {
 
@@ -17,7 +18,7 @@ export class SearchBar extends Component {
     handleSubmit = (event) => {
         event.preventDefault()
 
-        console.log(this.state)
+        this.props.findShoe(this.state)
         this.setState({
             query: ""
         })
@@ -36,7 +37,7 @@ export class SearchBar extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    // findShoe: shoe => dispatch(findShoe(shoe))
+    findShoe: shoe => dispatch(findShoe(shoe))
 })
 
 export default connect(null, mapDispatchToProps)(SearchBar)

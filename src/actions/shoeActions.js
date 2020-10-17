@@ -35,6 +35,18 @@ export const addShoe = (shoe) => {
     }
 }
 
+export const findShoe = (query) => {
+    return (dispatch) => {
+        fetch(shoeURL)
+        .then(resp => resp.json())
+        .then(shoe => {
+            console.log(query)
+            dispatch({type: 'FIND_SHOE', query})
+        })
+        .catch(errors => console.log(errors))
+    }
+}
+
 export const editShoe = (shoeData) => {
     return (dispatch) => {
         fetch(`${shoeURL}/${shoeData.id}`, {

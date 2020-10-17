@@ -20,7 +20,7 @@ class App extends Component {
     return (
       <div className="App">
         <Container >
-            <Navbar />
+            <Navbar brands={this.props.brands.brands} shoes={this.props.shoes.shoes}/>
             <Switch>
               <Route exact path="/" component={ Home } />
             </Switch>
