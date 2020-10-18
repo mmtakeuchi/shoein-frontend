@@ -4,6 +4,7 @@ import {Container, Row, Card, CardGroup} from 'react-bootstrap'
 
 class ShoesList extends Component {
   render() {
+    console.log(this)
     const { shoes } = this.props;
 
     const shoelist = () => {

@@ -31,7 +31,7 @@ export class SearchBar extends Component {
     }
 
     render() {
-        // console.log(this)
+        console.log(this)
         return (
             <div>
                 <Form onSubmit={this.handleSubmit}>

@@ -33,7 +33,7 @@ class NavigationBar extends React.Component {
       this.props.history.push("/search")
   }
   render() {
-      console.log(this)
+      console.log(this.props)
     return (
       <div>
         <Navbar bg="light" expand="lg">
@@ -49,14 +49,13 @@ class NavigationBar extends React.Component {
             </Form>
           
       </Navbar>
-  
-      <Route path="/search" render={(props) => <SearchResults {...props} history={this.props.history} shoes={this.props.shoes}/>}/>
+      {/* <Route path="/search" render={(props) => <SearchResults {...props} shoes={this.props.shoes}/>}/> */}
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) => ({shoes: state.shoes})
+// const mapStateToProps = (state) => ({shoes: state.shoes})
 
-export default connect(mapStateToProps)(NavigationBar);
+export default NavigationBar;
 
