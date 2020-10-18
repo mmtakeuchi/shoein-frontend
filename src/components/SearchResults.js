@@ -55,51 +55,42 @@ class SearchResults extends Component {
 
   render() {
     console.log(this)
-    const { shoes } = this.props;
-
-    const shoelist = () => {
-      if (shoes && shoes.length >= 1) {
-        return shoes.map((shoe) => {
-          return (
-              <div>
-                <div >Results {shoes.length}</div><br/>
-                <div key={shoe.id} className={`shoe_${shoe.id} col-md-3`}>
-                <CardGroup >
-                    <Card>
-                        <Link to={"/shoes/" + shoe.id} >
-                        <Card.Img src={shoe.picture} alt={shoe.name}/>
-                        </Link>
-                        <Card.Body>
-                        <Card.Title><Link to={"/shoes/" + shoe.id} style={{textDecoration: 'none', color: 'black', textAlign:'center'}}><h4>{shoe.name}</h4></Link><br/></Card.Title>
-                        </Card.Body>
-                    </Card> 
-                </CardGroup>
-                </div>
-              </div>
-          );
-        });
-      }
-    }
     return (
-      <div className="shoes" style={{margin:"20px"}}>
-          <Container>
-            <Row >
-            {/* {shoelist()} */}
-            {/* {this.props.query} */}
-            {this.state.searchResults.length > 0 ? (
-          <pre>
-            <small>{JSON.stringify(this.state.searchResults, null, 2)}</small>
-          </pre>
-        ) : (
-          <p>NO RESULTS FOUND</p>
-        )}
-            Shoes search
-            </Row>
-          </Container>
-      </div>
-    );
+        <div className="shoes" style={{margin:"20px"}}>
+            <Container>
+              <Row >
+              {this.state.searchResults.length > 0 ? (
+            <div>
+              <div>Results {this.state.searchResults.length}</div>
+              {this.state.searchResults.map(shoe => {
+                  return (
+                      <>
+                          <div key={shoe.id} className={`shoe_${shoe.id} col-md-3`}>
+                              <CardGroup >
+                                  <Card>
+                                      <Link to={"/shoes/" + shoe.id} >
+                                      <Card.Img src={shoe.picture} alt={shoe.name}/>
+                                      </Link>
+                                      <Card.Body>
+                                      <Card.Title><Link to={"/shoes/" + shoe.id} style={{textDecoration: 'none', color: 'black', textAlign:'center'}}><h4>{shoe.name}</h4></Link><br/></Card.Title>
+                                      </Card.Body>
+                                  </Card> 
+                              </CardGroup>
+                          </div>
+                      </>
+                      
+                  )
+              })}
+            </div>
+          ) : (
+            <p>NO RESULTS FOUND</p>
+          )}
+              
+              </Row>
+            </Container>
+        </div>
+      );
     };
-
   }
 
 const mapStateToProps = (state) => ({shoes: state.shoes})
@@ -109,26 +100,3 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchResults);
-
-//   render() {
-//     let toRender = this.state.isLoading ? (
-//       <h1>Loading...</h1>
-//     ) : (
-//       <>
-//         <h1>Your Search Results</h1>
-//         <ul>
-//           <li>Search: "{this.state.searchText}"</li>
-//           <li>Count: {this.state.searchResults.length}</li>
-//         </ul>
-//         {this.state.searchResults.length > 0 ? (
-//           <pre>
-//             <small>{JSON.stringify(this.state.searchResults, null, 2)}</small>
-//           </pre>
-//         ) : (
-//           <p>NO RESULTS FOUND</p>
-//         )}
-//       </>
-//     );
-
-//     return <div style={{ margin: "20px 0px 0px 20px" }}>{toRender}</div>;
-//   }
