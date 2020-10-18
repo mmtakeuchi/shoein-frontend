@@ -58,10 +58,16 @@ class SearchResults extends Component {
     return (
         <div className="shoes" style={{margin:"20px"}}>
             <Container>
+                <Row>
+
+                    <div>Search: "{this.state.query}"</div>
+                </Row>
+            
               <Row >
               {this.state.searchResults.length > 0 ? (
+                  
             <div>
-              <div>Results {this.state.searchResults.length}</div>
+                <div>Results {this.state.searchResults.length}</div>
               {this.state.searchResults.map(shoe => {
                   return (
                       <>
