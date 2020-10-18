@@ -8,7 +8,6 @@ const shoesReducer = (state = {shoes: []}, action) => {
 
         case 'FIND_SHOE':
             let findSearch = state.shoes.filter(shoe => shoe.name.toLowerCase().includes(action.query.query.toLowerCase()))
-            console.log(findSearch)
             return findSearch
             
         case 'ADD_SHOE':

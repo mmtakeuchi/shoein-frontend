@@ -3,12 +3,13 @@ import {Route, Switch} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { getBrands } from './actions/brandActions'
 import { getShoes } from './actions/shoeActions'
-import Navbar from './components/Navbar'
+import NavigationBar from './components/NavigationBar'
 import SearchBar from './components/SearchBar'
 import Home from './components/Home'
 import BrandsContainer from './containers/BrandsContainer'
 import Container from 'react-bootstrap/Container'
 import { NavLink } from "react-router-dom";
+import SearchResults from './components/SearchResults'
 
 class App extends Component {
   
@@ -18,14 +19,15 @@ class App extends Component {
     }
 
   render() {
-    console.log(this)
+    // console.log(this)
     return (
       <div className="App">
         <Container >
-            <Navbar brands={this.props.brands.brands} shoes={this.props.shoes.shoes}/>
-              <SearchBar brands={this.props.brands.brands} shoes={this.props.shoes.shoes}/>
+             <NavigationBar brands={this.props.brands.brands} shoes={this.props.shoes.shoes}/>
+              <SearchBar brands={this.props.brands.brands} shoes={this.props.shoes.shoes} history={this.props.history}/>
               <Switch>
                 <Route exact path="/" component={ Home } />
+                <Route path="/search" component={SearchResults}/>
               </Switch>
               <BrandsContainer brands={this.props.brands.brands} shoes={this.props.shoes.shoes}/> 
             

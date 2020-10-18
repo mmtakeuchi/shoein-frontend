@@ -22,22 +22,24 @@ export class SearchBar extends Component {
         event.preventDefault()
 
         this.props.findShoe(this.state)
+
         this.setState({
             query: ""
         })
 
+        this.props.history.push(`/search/result`)
     }
 
     render() {
-        console.log(this)
+        // console.log(this)
         return (
             <div>
                 <Form onSubmit={this.handleSubmit}>
                     <Form.Control type="text" name="query" placeholder="Search Shoe" value={this.state.query} onChange={this.handleSearch}/>
                 </Form>
-                <Route path={`/shoesearch/result?query=${this.state.query}`} />
+                {/* <Route path={`/shoesearch/result?query=${this.state.query}`} /> */}
                 {/* <SearchResults shoes={this.props.shoes}/> */}
-                <ShoesList shoes={this.props.shoes}/>
+                <Route path="/search/result" render={(props) => <SearchResults {...props} query={this.state.query} shoes={this.props.shoes}/>}/>
             </div>
         )
     }

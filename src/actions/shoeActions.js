@@ -39,10 +39,7 @@ export const findShoe = (query) => {
     return (dispatch) => {
         fetch(shoeURL)
         .then(resp => resp.json())
-        .then(shoe => {
-            console.log(query)
-            dispatch({type: 'FIND_SHOE', query})
-        })
+        .then(shoe => dispatch({type: 'FIND_SHOE', query}))
         .catch(errors => console.log(errors))
     }
 }
