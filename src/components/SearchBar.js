@@ -27,7 +27,7 @@ export class SearchBar extends Component {
             query: ""
         })
 
-        this.props.history.push(`/search/result`)
+        this.props.history.push(`/search`)
     }
 
     render() {
@@ -39,7 +39,7 @@ export class SearchBar extends Component {
                 </Form>
                 {/* <Route path={`/shoesearch/result?query=${this.state.query}`} /> */}
                 {/* <SearchResults shoes={this.props.shoes}/> */}
-                <Route path="/search/result" render={(props) => <SearchResults {...props} query={this.state.query} shoes={this.props.shoes}/>}/>
+                <Route path="/search" render={(props) => <SearchResults {...props} query={this.state.query} shoes={this.props.shoes}/>}/>
             </div>
         )
     }

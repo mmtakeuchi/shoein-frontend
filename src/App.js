@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {Route, Switch} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { getBrands } from './actions/brandActions'
-import { getShoes } from './actions/shoeActions'
+import { getShoes, findShoe } from './actions/shoeActions'
 import NavigationBar from './components/NavigationBar'
 import SearchBar from './components/SearchBar'
 import Home from './components/Home'
@@ -23,7 +23,7 @@ class App extends Component {
     return (
       <div className="App">
         <Container >
-             <NavigationBar brands={this.props.brands.brands} shoes={this.props.shoes.shoes} history={this.props.history}/>
+             <NavigationBar brands={this.props.brands.brands} shoes={this.props.shoes.shoes} history={this.props.history} findShoe={this.props.findShoe}/>
               {/* <SearchBar brands={this.props.brands.brands} shoes={this.props.shoes.shoes} history={this.props.history}/> */}
               <Switch>
                 <Route exact path="/" component={ Home } />
@@ -44,7 +44,8 @@ const mapStateFromProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     getBrands: () => dispatch(getBrands()),
-    getShoes: () => dispatch(getShoes())
+    getShoes: () => dispatch(getShoes()),
+    findShoe: (query) => dispatch(findShoe(query))
 })
 
 export default connect(mapStateFromProps, mapDispatchToProps)(App)
