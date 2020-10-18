@@ -23,8 +23,8 @@ class App extends Component {
     return (
       <div className="App">
         <Container >
-             <NavigationBar brands={this.props.brands.brands} shoes={this.props.shoes.shoes}/>
-              <SearchBar brands={this.props.brands.brands} shoes={this.props.shoes.shoes} history={this.props.history}/>
+             <NavigationBar brands={this.props.brands.brands} shoes={this.props.shoes.shoes} history={this.props.history}/>
+              {/* <SearchBar brands={this.props.brands.brands} shoes={this.props.shoes.shoes} history={this.props.history}/> */}
               <Switch>
                 <Route exact path="/" component={ Home } />
                 <Route path="/search" component={SearchResults}/>
