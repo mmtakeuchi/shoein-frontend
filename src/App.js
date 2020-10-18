@@ -4,9 +4,11 @@ import { connect } from 'react-redux'
 import { getBrands } from './actions/brandActions'
 import { getShoes } from './actions/shoeActions'
 import Navbar from './components/Navbar'
+import SearchBar from './components/SearchBar'
 import Home from './components/Home'
 import BrandsContainer from './containers/BrandsContainer'
 import Container from 'react-bootstrap/Container'
+import { NavLink } from "react-router-dom";
 
 class App extends Component {
   
@@ -16,15 +18,17 @@ class App extends Component {
     }
 
   render() {
-
+    console.log(this)
     return (
       <div className="App">
         <Container >
             <Navbar brands={this.props.brands.brands} shoes={this.props.shoes.shoes}/>
-            <Switch>
-              <Route exact path="/" component={ Home } />
-            </Switch>
-            <BrandsContainer brands={this.props.brands.brands} shoes={this.props.shoes.shoes}/> 
+              <SearchBar brands={this.props.brands.brands} shoes={this.props.shoes.shoes}/>
+              <Switch>
+                <Route exact path="/" component={ Home } />
+              </Switch>
+              <BrandsContainer brands={this.props.brands.brands} shoes={this.props.shoes.shoes}/> 
+            
           </Container>
       </div>
     );

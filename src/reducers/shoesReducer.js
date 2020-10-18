@@ -7,14 +7,9 @@ const shoesReducer = (state = {shoes: []}, action) => {
             }
 
         case 'FIND_SHOE':
-            console.log(action.query)
-            console.log(state.shoes)
-            // const wineFilter = Wine.all.filter(wine => {
-            //     return wine.label.toLowerCase().includes(searchValue.toLowerCase())
-            // })
-            // debugger;
             let findSearch = state.shoes.filter(shoe => shoe.name.toLowerCase().includes(action.query.query.toLowerCase()))
             console.log(findSearch)
+            return findSearch
             
         case 'ADD_SHOE':
             return {

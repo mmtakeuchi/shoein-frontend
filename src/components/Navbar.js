@@ -63,7 +63,7 @@ const NavBar = (props) => {
          </Button>
          </Typography>
 
-         <SearchBar brands={props.brands} shoes={props.shoes}/>
+         {/* <SearchBar brands={props.brands} shoes={props.shoes}/> */}
 
         </Toolbar>
       </AppBar>
