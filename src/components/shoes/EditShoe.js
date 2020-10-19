@@ -68,7 +68,7 @@ class EditShoe extends Component {
                         </Form.Group>
 
                         <Button variant="primary" type="submit">
-                            Add Shoe
+                            Update Shoe
                         </Button>
         
                     </Form>

@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Backend repository
+https://github.com/mmtakeuchi/shoein-backend 
+
 ## Available Scripts
 
 In the project directory, you can run:
